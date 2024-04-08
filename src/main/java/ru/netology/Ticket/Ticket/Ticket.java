@@ -1,11 +1,14 @@
+package ru.netology.Ticket.Ticket;
+
+import java.util.Comparator;
 import java.util.Objects;
 
-public class Ticket {
-    private String from; // аэропорт откуда
-    private String to; // аэропорт куда
+public class Ticket implements Comparable<Ticket>, Comparator<Ticket> {
+    private final String from; // аэропорт откуда
+    private final String to; // аэропорт куда
     private int price; // цена
-    private int timeFrom; // время вылета (по москве)
-    private int timeTo; // время прилёта (по москве)
+    private final int timeFrom; // время вылета (по москве)
+    private final int timeTo; // время прилёта (по москве)
 
     public Ticket(String from, String to, int price, int timeFrom, int timeTo) {
         this.from = from;
@@ -19,6 +22,7 @@ public class Ticket {
         return from;
     }
 
+
     public String getTo() {
         return to;
     }
@@ -26,15 +30,25 @@ public class Ticket {
     public int getPrice() {
         return price;
     }
+    public void setPrice(int price) {
+        this.price = price;
+    }
+
 
     public int getTimeFrom() {
         return timeFrom;
     }
 
+
+
     public int getTimeTo() {
         return timeTo;
     }
 
+    @Override
+    public int compare(Ticket o1, Ticket o2) {
+        return 0;
+    }
 
     // Вспомогательные методы для корректной работы equals
     @Override
@@ -49,4 +63,25 @@ public class Ticket {
     public int hashCode() {
         return Objects.hash(from, to, price, timeFrom, timeTo);
     }
+
+    @Override
+    public int compareTo(Ticket o) {
+        if (price < o.getPrice()) {
+            return -1;
+        } else if (price > o.getPrice()) {
+            return +1;
+        } else {
+            return 0;
+        }
+    }
+    @Override
+    public int add(Ticket o) {
+        return 0;
+    }
+
+    @Override
+    public int search(Ticket o) {
+        return 0;
+    }
+
 }
