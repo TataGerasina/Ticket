@@ -1,9 +1,8 @@
 package ru.netology.Ticket.Ticket;
 
-import java.util.Comparator;
 import java.util.Objects;
 
-public class Ticket implements Comparable<Ticket>, Comparator<Ticket> {
+public class Ticket implements Comparable<Ticket> {
     private final String from; // аэропорт откуда
     private final String to; // аэропорт куда
     private int price; // цена
@@ -39,15 +38,8 @@ public class Ticket implements Comparable<Ticket>, Comparator<Ticket> {
         return timeFrom;
     }
 
-
-
     public int getTimeTo() {
         return timeTo;
-    }
-
-    @Override
-    public int compare(Ticket o1, Ticket o2) {
-        return 0;
     }
 
     // Вспомогательные методы для корректной работы equals
@@ -65,10 +57,10 @@ public class Ticket implements Comparable<Ticket>, Comparator<Ticket> {
     }
 
     @Override
-    public int compareTo(Ticket o) {
-        if (price < o.getPrice()) {
+    public int compareTo(Ticket otherTicket) {
+        if (price < otherTicket.price) {
             return -1;
-        } else if (price > o.getPrice()) {
+        } else if (price > otherTicket.price) {
             return +1;
         } else {
             return 0;

@@ -6,8 +6,8 @@ public class TicketPriceComparator implements Comparator<Ticket> {
 
     @Override
     public int compare(Ticket o1, Ticket o2) {
-        int price1 = o1.getPrice() - o1.getPrice();
-        int price2 = o2.getPrice() - o2.getPrice();
+        int price1 = o1.getPrice();
+        int price2 = o2.getPrice();
 
         if (price1 < price2) {
             return -1;
