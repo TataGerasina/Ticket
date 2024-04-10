@@ -29,6 +29,7 @@ public class Ticket implements Comparable<Ticket> {
     public int getPrice() {
         return price;
     }
+
     public void setPrice(int price) {
         this.price = price;
     }
@@ -66,6 +67,7 @@ public class Ticket implements Comparable<Ticket> {
             return 0;
         }
     }
+
     @Override
     public int add(Ticket o) {
         return 0;
